@@ -1,0 +1,260 @@
+:root {
+  --primary-color: #023047;
+  --secondary-color: #efefef;
+  --theme-color: #ffd500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--secondary-color);
+  overflow: hidden;
+  color: var(--primary-color);
+}
+img {
+  max-width: 100%;
+}
+a {
+  display: block;
+}
+/* comman class start */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+section {
+  padding: 60px 0px;
+}
+.btn_box {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+}
+.mybtn {
+  background-color: var(--theme-color);
+  padding: 12px 24px;
+  border-radius: 10px;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.section_title {
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 35px;
+  display: inline-block;
+  position: relative;
+}
+.section_title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--theme-color);
+  width: 90%;
+  height: 3px;
+}
+.section_para {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+section.primary_color {
+  color: var(--secondary-color);
+}
+.img_warpper {
+  width: 100%;
+}
+/* comman class end */
+
+/* header start */
+#nav {
+  position: sticky;
+  top: 0;
+  background-color: var(
+    --primary-color
+  ); /* Adjust the background color as needed */
+  z-index: 1000; /* Ensure the navigation bar is above other elements */
+}
+
+/* Add the following CSS if you want the navigation bar to have a box shadow */
+#nav {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand_name a {
+  color: var(--theme-color);
+  font-size: 24px;
+  font-weight: 600;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px 0px;
+  justify-content: space-between;
+}
+#navbar #navItems {
+  display: none;
+}
+div#toggleBar {
+  position: relative;
+  z-index: 1;
+}
+#navbar #toggleBar span {
+  width: 25px;
+  display: block;
+  background: var(--theme-color);
+  height: 3px;
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+#navbar #toggleBar span:nth-of-type(2) {
+  margin: 5px 0px;
+}
+
+#navbar #navItems.mobile_navItems {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  height: 100vh;
+  width: 100%;
+  background: var(--primary-color);
+  transition: 0.3s all ease-in-out;
+}
+#navbar #toggleBar.toggleBarIcon span:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+#navbar #toggleBar.toggleBarIcon span:nth-of-type(2) {
+  display: none;
+}
+#navbar #toggleBar.toggleBarIcon span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: -3px;
+}
+/* #navbar #toggleBar.toggleBarIcon span {
+  background-color: var(--secondary-color);
+} */
+
+#navbar #navItems .navItem .navLink {
+  color: var(--theme-color);
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+/* header end */
+
+/* hero section start */
+
+.hero_content h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.hero_content h1 span {
+  color: var(--theme-color);
+}
+.hero_content p {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.hero_imgwrapper {
+  width: 100%;
+}
+.hero_imgwrapper .hero_img {
+  width: 75%;
+}
+
+/* hero section end */
+
+/* about section start */
+
+#aboutSection {
+  background-color: var(--primary-color);
+}
+.about_img {
+  max-width: 80%;
+}
+
+/* about section end */
+
+/* course section start */
+
+.courses {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+.courses .course {
+  background-color: var(--primary-color);
+  padding: 40px 20px;
+  border-radius: 15px;
+}
+.course_title {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: var(--theme-color);
+}
+.course_text {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+/* course section end */
+
+/* footer start */
+footer {
+  background-color: var(--primary-color);
+  padding: 40px 0px;
+}
+.footer_brand_name {
+  font-size: 24px;
+  color: var(--theme-color);
+  font-weight: bold;
+}
+.footer_links {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.footer_links a {
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+.copy_right p {
+  color: var(--secondary-color);
+  font-size: 14px;
+}
+/* footer end */
