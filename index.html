@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
@@ -17,7 +19,7 @@
         <div class="container">
             <div class="header">
                 <div class="brand_name">
-                    <a href="/"><span>AD School</span></a>
+                    <a href="/"><span>JD School</span></a>
                 </div>
 
                 <div id="navbar">
@@ -31,17 +33,17 @@
                             <a href="/" class="navLink">Home</a>
                         </li>
                         <li class="navItem">
-                            <a href="#" class="navLink">About</a>
+                            <a href="#aboutSection" class="navLink">About</a>
                         </li>
                         <li class="navItem">
-                            <a href="#" class="navLink">Courses</a>
+                            <a href="#courseSection" class="navLink">Courses</a>
                         </li>
                         <li class="navItem">
-                            <a href="#" class="navLink">Student Login</a>
+                            <a href="javascript:void(0)" class="navLink" id="loginBtn">Login</a>
                         </li>
-                        <li class="navItem">
-                            <a href="#" class="navLink">Teacher Login</a>
-                        </li>
+                        <!-- <li class="navItem">
+                            <a href="javascript:void(0)" class="navLink" id="signinBtn">Sign up</a>
+                        </li> -->
                     </ul>
 
                 </div>
@@ -128,6 +130,39 @@
     </section>
     <!-- course section end -->
 
+
+
+    <!-- login form start -->
+    <form action="" id="formPopup" class="popup_form">
+        <div class="form_box">
+            <div class="login_tab_box">
+                <div class="login_tab">
+                    <button class="tablinks" onclick="openLogin(event, 'studentLogin')" id="defaultOpen">Student Login</button>
+                    <button class="tablinks" onclick="openLogin(event, 'teacherLogin')">Teacher Login</button>
+                </div>
+                <div id="studentLogin" class="tabcontent">
+                    <h3>London</h3>
+                    <p>London is the capital city of England.</p>
+                </div>
+                
+                <div id="teacherLogin" class="tabcontent">
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+            </div>
+            <a href="javascript:void(0)" id="closeForm">
+                <span class="material-icons close-icon">close</span>
+            </a>
+            <div class="input_group">
+                <input type="text" name="uname" id="uname" placeholder="User name" required>
+                <input type="password" name="upassword" id="upassword" placeholder="Your Password" required>
+            </div>
+            <div class="input_group">
+                <button class="mybtn login_btn">Login</button>
+            </div>
+        </div>
+    </form>
+    <!-- login form end -->
 
     <!-- footer start -->
     <footer>
