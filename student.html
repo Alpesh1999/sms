@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+
+</head>
+
+<body id="body">
+
+    <nav id="nav">
+        <div class="container">
+            <div class="header">
+                <div class="brand_name">
+                    <a href="/"><span>JD School</span></a>
+                </div>
+
+                <div id="navbar">
+                    <div id="toggleBar" onclick="toggleBar()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul id="navItems" class="">
+                        <li class="navItem">
+                            <a href="/" class="navLink active">Home</a>
+                        </li>
+                        <li class="navItem">
+                            <a href="#aboutSection" class="navLink">About</a>
+                        </li>
+                        <li class="navItem">
+                            <a href="#courseSection" class="navLink">Courses</a>
+                        </li>
+                        <li class="navItem">
+                            <a href="javascript:void(0)" class="navLink" id="logout">Logout</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="student_area">
+        <aside id="aside">
+            <div class="aside_items">
+                <a href="#dashboard" class="aside_item">Dashboard</a>
+                <a href="#timetable" class="aside_item">Time table</a>
+                <a href="#library" class="aside_item">Library</a>
+                <a href="#exams" class="aside_item">Exams</a>
+            </div>
+        </aside>
+
+        <!-- student main area start -->
+        <main id="dashboardMain">
+            <section id="dashboard">
+                <h2 id="welcomeMessage">Welcome <span id="username"></span></h2>
+    <h4 class="yourteacher">Your Class Teacher: <span id="classTeacher"></span></h4>
+    <!-- <button id="logout">Logout</button> -->
+            </section>
+            <section id="timetable">
+                <h3>Your daily time table here.</h3>
+
+                
+            </section>
+            <section id="library">
+                library here
+            </section>
+            <section id="exams">
+                exams here
+            </section>
+        </main>
+        <!-- student main area end -->
+
+
+    </div>
+
+    <!-- footer start -->
+    <footer>
+        <div class="container">
+            <div class="wrapper">
+                <div class="footer_brand_name">
+                    <span>JD School</span>
+                </div>
+                <div class="footer_links">
+                    <a href="#">About Us</a>
+                    <a href="#">Our Courses</a>
+                    <a href="#">Privecy & Policy</a>
+                </div>
+                <div class="copy_right">
+                    <p>&#169; JD School 2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+
+    <script src="js/script.js"></script>
+    <script src="js/datasave.js"></script>
+
+    <script src="js/teachersData.js"></script>
+    <script src="js/studentsData.js"></script>
+
+
+    <!-- <script>
+        // Retrieve user data from local storage
+        const userData = localStorage.getItem('userData');
+
+        if (userData) {
+            // Parse the JSON string to an object
+            const user = JSON.parse(userData);
+
+            // Get the username
+            const username = user.name;
+
+            // Update the welcome message with the username
+            document.addEventListener('DOMContentLoaded', function () {
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                welcomeMessage.textContent = `Welcome ${username}`;
+            });
+        }
+    </script> -->
+
+    <script>
+        // Retrieve user data from local storage
+        const userData = localStorage.getItem('userData');
+
+        if (userData) {
+            // Parse the JSON string to an object
+            const user = JSON.parse(userData);
+
+            // Get the username
+            const username = user.name;
+
+            // Update the welcome message with the username
+            const usernameElement = document.getElementById('username');
+            usernameElement.textContent = username;
+
+            // Get the class teacher for the student (assuming you have a 'classTeacher' property in the user object)
+            const classTeacher = user.classTeacher;
+
+            // Update the class teacher element
+            const classTeacherElement = document.getElementById('classTeacher');
+            classTeacherElement.textContent = classTeacher;
+
+            // Update the welcome message with the username
+            document.addEventListener('DOMContentLoaded', function () {
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                welcomeMessage.textContent = `Welcome ${username}`;
+            });
+        }
+
+        // Logout functionality
+        const logoutButton = document.getElementById('logout');
+        logoutButton.addEventListener('click', function () {
+            // Clear the user data from local storage
+            localStorage.removeItem('userData');
+
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>

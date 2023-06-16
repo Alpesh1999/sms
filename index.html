@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <nav id="nav">
         <div class="container">
@@ -30,7 +30,7 @@
                     </div>
                     <ul id="navItems" class="">
                         <li class="navItem">
-                            <a href="/" class="navLink">Home</a>
+                            <a href="/" class="navLink active">Home</a>
                         </li>
                         <li class="navItem">
                             <a href="#aboutSection" class="navLink">About</a>
@@ -132,37 +132,81 @@
 
 
 
-    <!-- login form start -->
-    <form action="" id="formPopup" class="popup_form">
+
+    <form action="" id="formPopup" class="popup_form" onsubmit="submitForm(event)">
         <div class="form_box">
-            <div class="login_tab_box">
-                <div class="login_tab">
-                    <button class="tablinks" onclick="openLogin(event, 'studentLogin')" id="defaultOpen">Student Login</button>
-                    <button class="tablinks" onclick="openLogin(event, 'teacherLogin')">Teacher Login</button>
-                </div>
-                <div id="studentLogin" class="tabcontent">
-                    <h3>London</h3>
-                    <p>London is the capital city of England.</p>
-                </div>
-                
-                <div id="teacherLogin" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p>
-                </div>
-            </div>
             <a href="javascript:void(0)" id="closeForm">
                 <span class="material-icons close-icon">close</span>
             </a>
-            <div class="input_group">
-                <input type="text" name="uname" id="uname" placeholder="User name" required>
-                <input type="password" name="upassword" id="upassword" placeholder="Your Password" required>
+            <div class="login_tab_box">
+                <div class="login_tab">
+                    <button class="tablinks" onclick="openLogin(event, 'studentLogin')" id="defaultOpen">Student
+                        Login</button>
+                    <button class="tablinks" onclick="openLogin(event, 'teacherLogin')">Teacher Login</button>
+                </div>
+                <div id="studentLogin" class="tabcontent">
+                    <div class="input_group">
+                        <input type="text" name="suname" id="suname" placeholder="Student User name" required>
+                        <input type="password" name="spassword" id="spassword" placeholder="Your Password" required>
+                    </div>
+                </div>
+                <div id="teacherLogin" class="tabcontent">
+                    <!-- <div class="input_group">
+                        <input type="text" name="tuname" id="tuname" placeholder="Teacher User name" required>
+                        <input type="password" name="tpassword" id="tpassword" placeholder="Your Password" required>
+                    </div> -->
+                </div>
             </div>
-            <div class="input_group">
-                <button class="mybtn login_btn">Login</button>
+            <div class="input_group btn_group">
+                <button id="loginHere" class="mybtn login_btn">Login</button>
             </div>
+            <p class="acountOrnot">Don't have an account? <a href="javascript:void(0)" id="signupBtn">Register here</a></p>
         </div>
     </form>
     <!-- login form end -->
+
+    <!-- register form start -->
+    <form action="" id="registerFormPopup" class="popup_form">
+        <div class="form_box">
+            <a href="javascript:void(0)" id="closeForm2">
+                <span class="material-icons close-icon">close</span>
+            </a>
+            <div class="login_tab_box">
+                <div class="login_tab">
+                    <button class="tablinks" onclick="openSignup(event, 'studentSignup')" id="defaultOpen2">Student
+                        Signup</button>
+                    <button class="tablinks" onclick="openSignup(event, 'teacherSignup')">Teacher Signup</button>
+                </div>
+                <div id="studentSignup" class="tabcontent">
+                    <div class="input_group">
+                        <input type="text" name="suname" id="suname" placeholder="Student User name" required>
+                        <input type="email" name="semail" id="semail" placeholder="Student email" required>
+                        <input type="number" name="rsmobile" id="rsmobile" placeholder="Your Mobile" required>
+                        <input type="password" name="spassword" id="spassword" placeholder="Your Password" required>
+                        <input type="password" name="rspassword" id="rspassword" placeholder="Repeat Your Password"
+                            required>
+                    </div>
+                </div>
+                <div id="teacherSignup" class="tabcontent">
+                    <div class="input_group">
+                        <input type="text" name="tuname" id="tuname" placeholder="Teacher User name" required>
+                        <input type="email" name="temail" id="temail" placeholder="Teacher email" required>
+                        <input type="number" name="tmobile" id="tmobile" placeholder="Your Mobile" required>
+                        <input type="password" name="tpassword" id="tpassword" placeholder="Your Password" required>
+                        <input type="password" name="rtpassword" id="rtpassword" placeholder="Repeat Your Password"
+                            required>
+                    </div>
+                </div>
+            </div>
+            <div class="input_group btn_group">
+                <button id="registerHere" class="mybtn login_btn">Register</button>
+            </div>
+            <p class="acountOrnot">Already have an account? <a href="javascript:void(0)" id="loginBtn2">Login here</a></p>
+
+        </div>
+    </form>
+
+
 
     <!-- footer start -->
     <footer>
@@ -187,8 +231,14 @@
 
 
     <script src="js/script.js"></script>
-    <script src="js/teachersData.js"></script>
-    <script src="js/studentsData.js"></script>
+    <script src="js/datasave.js"></script>
+    <!-- <script src="js/teachersData.js"></script>
+    <script src="js/studentsData.js"></script> -->
+
+
+    <script>
+
+    </script>
 </body>
 
 </html>

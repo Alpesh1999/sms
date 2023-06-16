@@ -1,0 +1,42 @@
+section {
+  padding: 0px;
+}
+
+.student_area {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  background-color: var(--secondary-color);
+}
+#aside {
+  height: calc(100vh - 213px);
+  padding: 30px;
+}
+#dashboardMain {
+  height: calc(100vh - 213px);
+  overflow-y: scroll;
+  padding: 30px;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.aside_items {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.aside_items .aside_item {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.aside_items .aside_item:hover {
+  color: var(--theme-color);
+}
+
+#dashboard,
+#timetable,
+#library,
+#exams {
+  min-height: calc(100vh - 213px);
+  padding: 40px 0px;
+}
